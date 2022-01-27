@@ -1,9 +1,6 @@
-// import logo from './logo.svg';
-
+//Import styles from App.css, React and Google Maps API
 import './App.css';
 import React from 'react';
-
-
 
 import {
   GoogleMap,
@@ -42,30 +39,7 @@ const center = {
   lng: -122.332071
 };
 
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
+//Render Compoonents
 export default function App() {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
