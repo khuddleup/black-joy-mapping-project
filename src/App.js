@@ -1,6 +1,9 @@
 //Import styles from App.css, React and Google Maps API
 import './App.css';
 import React from 'react';
+import {useState} from 'react';
+// import database from 'firebase';
+// import { getDatabase, ref, set } from "firebase/database";
 
 // import {ReactComponent as Fist} from "./fist.svg"
 
@@ -22,6 +25,10 @@ import {
 //   ComboboxOption,
 // } from "@reach/combobox";
 // import { formatRelative } from "date-fns";
+
+
+// const database = getDatabase();
+
 
 import "@reach/combobox/styles.css";
 // import mapStyles from "./mapStyles";
@@ -51,7 +58,11 @@ export default function App() {
   const [markers, setMarkers] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
 
+
+
+  //write to database
   const onMapClick = React.useCallback((e) => {
+    console.log(markers);
     setMarkers((current) => [
       ...current,
       {
@@ -60,7 +71,7 @@ export default function App() {
         time: new Date(),
       },
     ]);
-  }, []);
+  }, [markers]);
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
@@ -113,3 +124,5 @@ export default function App() {
 
   );
 }
+
+
